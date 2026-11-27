@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Мониторинг подстанций</title>
+    <link rel="stylesheet" href="./src/styles.css">
+    <link rel="stylesheet" href="./src/dashboard.css">
+    <script type="module" src="./src/app.js"></script>
+  </head>
+  <body class="session-view">
+    <header class="app-header">
+      <div class="identity"><span class="network-mark" aria-hidden="true"></span>Мониторинг подстанций</div>
+      <nav aria-label="Разделы" hidden></nav>
+      <div class="account" hidden><span id="operator"></span><button id="logout" type="button">Выйти</button></div>
+    </header>
+    <main class="workspace">
+      <h1 tabindex="-1">Проверка сессии</h1>
+      <div id="page"><progress aria-label="Проверка сессии"></progress></div>
+      <p id="shell-error" role="alert"></p>
+    </main>
+    <template id="login-form">
+      <form class="sign-in" method="post">
+        <label for="username">Логин</label>
+        <input id="username" name="login" autocomplete="username" autocapitalize="none" autocorrect="off" spellcheck="false" required>
+        <label for="password">Пароль</label>
+        <input id="password" name="password" type="password" autocomplete="current-password" required>
+        <p class="form-error" role="alert"></p>
+        <button class="primary" type="submit">Войти <span aria-hidden="true">→</span></button>
+      </form>
+    </template>
+  </body>
+</html>

@@ -1,0 +1,12 @@
+/.env
+/backups/
+/deploy/tls/
+__pycache__/
+*.py[cod]
+.venv/
+*.egg-info/
+.pytest_cache/
+
+*.dump
+*.key
+*.crt

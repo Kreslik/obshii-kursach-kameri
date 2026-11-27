@@ -1,0 +1,75 @@
+:root {
+  color-scheme: light;
+  font: 100%/1.5 Inter, "Segoe UI", system-ui, sans-serif;
+  color: #182d33;
+  background: #f4f7f7;
+}
+*, *::before, *::after { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body { margin: 0; }
+button, input, select { font: inherit; }
+button { cursor: pointer; }
+:is(button, a, input, select):focus-visible { outline: 3px solid #2681a5; outline-offset: 2px; }
+.app-header {
+  display: flex; align-items: center; flex-wrap: wrap; gap: .75rem 2.5rem;
+  min-height: 4.25rem; padding: .75rem clamp(1rem, 3.5vw, 4rem);
+  color: #f4fbfb; background: #193b40;
+}
+.identity, .account { display: flex; align-items: center; gap: .65rem; }
+.identity { font-weight: 650; letter-spacing: -.025em; }
+.network-mark {
+  display: inline-block; position: relative; width: 1.6rem; height: 1.6rem;
+  color: #a3ddcd; border: 1.5px solid currentColor; border-radius: .3rem;
+}
+.network-mark::before, .network-mark::after {
+  content: ""; position: absolute; border: solid currentColor; border-width: 1.5px 0 0 1.5px;
+  width: .45rem; height: .45rem; transform: skewY(-30deg);
+}
+.network-mark::before { left: .32rem; top: .73rem; }
+.network-mark::after { left: .72rem; top: .48rem; }
+nav { display: flex; align-items: center; flex-wrap: wrap; gap: .2rem; }
+nav a, .account button {
+  padding: .42rem .68rem; border-radius: .4rem; color: #d1e1df;
+  text-decoration: none; font-size: .85rem;
+}
+nav a:hover, nav a[aria-current] { background: #305356; color: white; }
+.account { margin-inline-start: auto; color: #d1e1df; font-size: .85rem; }
+.account button { background: transparent; border: 1px solid #6e8a89; }
+.workspace { max-width: 108rem; margin: 0 auto; padding: clamp(1rem, 3vw, 3rem) clamp(1rem, 3.5vw, 4rem); }
+h1 { font-size: clamp(1.6rem, 2.8vw, 2.45rem); line-height: 1.15; letter-spacing: -.035em; margin: 0 0 1.55rem; }
+#page { min-width: 0; }
+.session-view .workspace {
+  max-width: 26rem; width: calc(100% - 2rem); margin: clamp(2rem, 13vh, 8rem) auto;
+  padding: clamp(1.5rem, 4vw, 2.5rem); background: #fff; border-radius: .85rem;
+  border: 1px solid #d6e0df; box-shadow: 0 .65rem 2.5rem #203e4110;
+}
+.session-view h1 { font-size: 1.95rem; margin: 0 0 1.75rem; }
+.sign-in { display: grid; gap: .4rem; }
+.sign-in label { font-size: .875rem; font-weight: 600; }
+.sign-in input {
+  width: 100%; min-height: 2.8rem; border: 1px solid #9fb1b2; padding: .55rem .75rem;
+  border-radius: .4rem; color: #182d33; background: white;
+}
+.sign-in input + label { margin-top: .7rem; }
+.primary, .session-view #page > button {
+  display: flex; justify-content: space-between; align-items: center; margin-top: 1rem;
+  padding: .72rem 1rem; border: 0; border-radius: .4rem; background: #175a5a;
+  color: white; font-weight: 600;
+}
+.primary:hover:enabled, .session-view #page > button:hover { background: #104746; }
+.primary:disabled { cursor: wait; opacity: .7; }
+.form-error, #shell-error { color: #9e352d; font-size: .9rem; margin: .5rem 0 0; }
+.form-error:empty, #shell-error:empty { margin: 0; height: 0; }
+@media (max-width: 64rem) {
+  .app-header { gap: .6rem 1rem; }
+  .app-header nav { width: 100%; order: 1; }
+}
+@media (max-width: 30rem) {
+  .account { margin-inline-start: 0; }
+  .app-header nav a { padding: .35rem .45rem; }
+}
+section { padding: .8rem 1rem; margin-bottom: 1rem; background: white; }
+h2 { margin: 0; font-size: 1.15rem; }
+fieldset { display: flex; flex-wrap: wrap; gap: .75rem; margin: 0 0 1rem; }
+table { width: 100%; border-collapse: collapse; background: white; }
+th, td { padding: .6rem; text-align: left; border-bottom: 1px solid #c5d1d8; }
